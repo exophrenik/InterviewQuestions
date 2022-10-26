@@ -1,0 +1,100 @@
+
+
+
+1. What is the difference between call by value and call by reference
+2. Is Java a call by value or call by reference lanugage? 
+
+
+3. What is the printed value of x?
+public Main(){
+
+	public static void main(String[] args) {
+     
+		int x = 5;
+
+		increment(x);
+
+		System.out.println(x);
+	 
+    }
+	
+	public static void increment(int x) {
+		x++;
+	}
+
+}
+
+
+
+
+4. What is the printed value of person.name?
+
+public class Person {
+
+    public String name;
+   
+}
+
+public Main(){
+
+	public static void main(String[] args) {
+     
+		Person person = new Person();
+
+		person.name = "John";
+
+		rename(person);
+		
+		System.out.println(person.name);
+	 
+    }
+	
+	public static void rename(Person person) {
+		person.name = "George";
+	}
+
+}
+
+
+5. What will this code produce? 
+   WhY?
+
+    public String name;
+    public String surname;
+
+    Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname;
+    }
+}
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		List<Person> persons = new ArrayList<>();
+
+        persons.add(new Person("John","Doe"));
+        persons.add(new Person("John","Smith"));
+
+        List<Person> persons2 = new ArrayList<>();
+
+        persons2.addAll(persons);
+
+        System.out.println(persons);
+        System.out.println(persons2);
+
+        persons2.get(0).surname = "Smith";
+
+        System.out.println(persons);
+        System.out.println(persons2);
+        
+    }
+}

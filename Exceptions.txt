@@ -1,0 +1,107 @@
+public class Task {
+
+    public static void run() throws Exception {
+        throw new Exception("Error");
+    }
+
+    public static void sleep() throws SleepException{
+        throw new SleepException("Error while sleeping");
+    }
+}
+
+public class SleepException extends Exception{
+
+    SleepException(String message) {
+        super(message);
+    }
+}
+
+
+
+
+    //1. What is going to happen here?
+	
+	public static void main(String[] args) {
+        Task.run();
+       
+    }
+
+
+
+	//2  What is going to happen here?
+	public static void main(String[] args) {
+        try {
+            Task.run();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    
+    }
+	
+	
+	//3  What is going to happen here?
+	public static void main(String[] args) {
+        try {
+            Task.run();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            System.out.println("Task is done");
+        }
+    }
+	
+	
+	//4  Will this work?
+	public static void main(String[] args) {
+        try {
+            Task.run();
+			Task.sleep();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+     
+    }
+	
+	//4  Will this work?
+	public static void main(String[] args) {
+        try {
+            Task.run();
+			Task.sleep();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        catch (SleepException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+	
+	//5  Will this work?   
+	     What is the purpose of multiple catch blocks
+	public static void main(String[] args) {
+        try {
+            Task.run();
+			Task.sleep();
+        }
+		catch (SleepException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+	
+	//6  Will this work?   
+	public static void main(String[] args) {
+        try {
+            Task.run();
+        }
+		catch (SleepException e) {
+			Task.run();
+            System.out.println(e.getMessage());
+        }
+    }

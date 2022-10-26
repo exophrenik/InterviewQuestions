@@ -1,0 +1,6 @@
+1. What is a List?
+2. Can you give us two examples of a List implementation?
+3. What is the difference between ArrayList and LinkedList? When to use each one?
+4. What is a HashMap? How does it work?
+5. What happens if you add two values with the same key in a Hashmap?
+6. What is the advantage of a hashmap compared to a list?

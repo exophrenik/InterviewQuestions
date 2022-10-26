@@ -1,0 +1,22 @@
+1. What is a primary key
+2. What is a foreign key
+3. What is an index
+4. Why we should use an index, why we should not?
+
+5. Modify those two tables to support a multiple e-mails for a single person 
+
+TABLE PERSON (id VARCHAR(30) PK, name VARCHAR(30), surname VARCHAR(30), email VARCHAR(100))
+
+TABLE EMAIL (email VARCHAR(100))
+
+
+
+
+6. How can we support multiple tasks for multiple users? 
+
+TABLE TASK (id VARCHAR(30) PK, codeNAME VARCHAR(100), displableName VARCHAR(100))
+
+TABLE USER (id VARCHAR(30) PK, name VARCHAR(100))
+
+
+7. What is a transaction?

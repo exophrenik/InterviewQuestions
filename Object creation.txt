@@ -1,0 +1,102 @@
+1. What is a private, public, protected?
+2. Is no constructor ok? Why?
+
+public class Person {
+
+    String name;
+    String surname;
+
+}
+
+----------------------------------------------------------------
+3. Are multiple constuctors ok?
+
+public class Person {
+
+    String name;
+    String surname;
+	
+	public Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+	
+	public Person(String name) {
+        this.name = name;
+    }
+
+}
+
+----------------------------------------------------------------
+4. Is a private constructor ok?
+
+public class Person {
+
+    String name;
+    String surname;
+
+    private Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+}
+
+----------------------------------------------------------------
+5  What is a final class
+   What is a final method
+   What is a final variable
+   What is a static method?
+   What is a static variable?
+	
+   Can we assign values to final properties in the consturctor?
+	  
+public class Person {
+
+    final String name;
+    final String surname;
+
+    public Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+  
+}
+
+-----------------------------------------------------------------
+6. Can we add this setter method?
+
+public class Person {
+
+    final String name;
+    final String surname;
+
+    public Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+} 
+
+
+ADVANCED
+-----------------------------------------------------------------
+7. Will this work?
+
+public class Task {
+
+     public static voind run() {
+		System.out.println("Task is running");
+	}
+}
+
+public static void main(String[] args) {
+        
+		Task task = null;
+		task.run();
+	}	
